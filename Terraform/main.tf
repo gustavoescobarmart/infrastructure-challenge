@@ -8,7 +8,7 @@ resource "terraform_data" "create_resource" {
 }
 
 resource "local_file" "create_inventory" {
-  filename = "inventory.ini"
+  filename = "../Ansible/inventory.ini"
   content = "[webservers]\n${join("\n", [ for i in terraform_data.create_resource : format("%s ansible_connection=local", i.input.name)])}"
 }
 output "result" {
