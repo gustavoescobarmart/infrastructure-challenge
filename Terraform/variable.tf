@@ -3,7 +3,7 @@ variable "name" {
   type = list(string)
 }
 
-variable "enviroment" {
+variable "environment" {
   description = "type of environment "
   type = string
 }
