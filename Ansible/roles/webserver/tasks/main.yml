@@ -1,4 +1,4 @@
-- name: Create web directory
+﻿- name: Create web directory
   ansible.builtin.file:
     path: "{{ web_dir }}"
     state: directory
@@ -17,5 +17,5 @@
 - name: make web index template
   ansible.builtin.template:
     src: index.j2
-    dest: /web/index.html 
+    dest: "{{ web_dir }}/index.html" 
     
