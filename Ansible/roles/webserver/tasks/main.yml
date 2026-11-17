@@ -1,6 +1,6 @@
 - name: Create web directory
   ansible.builtin.file:
-    path: /web
+    path: "{{ web_dir }}"
     state: directory
 
 - name: Install nginx
@@ -11,7 +11,7 @@
 - name: make nginx.conf template
   ansible.builtin.template:
     src: nginx.j2
-    dest: /etc/nginx/nginx.conf
+    dest: /etc/nginx/conf.d/nginx.conf
   notify: reload_nginx
 
 - name: make web index template
